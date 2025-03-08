@@ -1,3 +1,4 @@
 # My_Practices_on_Data_Structures_-_Algorithms
 
-this will start soon...
+on it...starting in some days:  
+      * stay tuned here for leetcode etc
