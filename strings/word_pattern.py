@@ -23,5 +23,5 @@ class Solution(object):
         return True
 
 obj = Solution()
-result = obj.wordPattern("abba", "dog cat cat fish")
+result = obj.wordPattern("abba", "dog cat cat dog")
 print(result)
