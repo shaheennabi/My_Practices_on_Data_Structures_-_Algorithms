@@ -1,7 +1,7 @@
 class ListNode:
-    def __init__(self, val = 0, next = None):
-        self.val = val
-        self.next = next
+    def __init__(self, x):
+        self.val = x
+        self.next = None
         
 
 class Solution:
@@ -20,4 +20,4 @@ class Solution:
             else:
                 current = current.next  # this will move step by step to traverse through all the nodes
         
-        return fake.next  # this will return from ist index
+        return fake.next  # thisd will return from ist index
