@@ -1,49 +1,50 @@
-# this is the function for merging two sorted arrays
-def merge_sorted(arr1, arr2):
-    i = j = 0
-    merged = []
+# Function to merge two sorted arrays into a single sorted array
+def merge_sorted(arr1, arr2, arr):
+    i = j = k = 0
 
     # Merge while both arrays have elements
     while i < len(arr1) and j < len(arr2):
         if arr1[i] < arr2[j]:
-            merged.append(arr1[i])
+            arr[k] = arr1[i]
             i += 1
         else:
-            merged.append(arr2[j])
+            arr[k] = arr2[j]
             j += 1
+        k += 1
 
     # Append remaining elements from arr1
     while i < len(arr1):
-        merged.append(arr1[i])
+        arr[k] = arr1[i]
         i += 1
+        k += 1
 
     # Append remaining elements from arr2
     while j < len(arr2):
-        merged.append(arr2[j])
-        j += 1 
+        arr[k] = arr2[j]
+        j += 1
+        k += 1
 
-    return merged
-    
-
-# this function implements the merge sort algorithm
-# it takes an array as input and returns a sorted array
+# Function that implements merge sort using divide and conquer
 def merge_sort(arr):
-    if len(arr) == 1:
-        return arr
+    if len(arr) <= 1:
+        return
 
-    mid = len(arr)//2
-    
+    mid = len(arr) // 2
     left = arr[:mid]
     right = arr[mid:]
 
-    left = merge_sort(left)
-    right =  merge_sort(right)
+    # Recursively sort the left and right halves
+    merge_sort(left)
+    merge_sort(right)
 
-    return  merge_sorted(left, right)
+    # Merge the sorted halves into the original array
+    merge_sorted(left, right, arr)
 
-arr = [2,1,5,8,9,7,4,6]
+# Example usage
+arr = [2, 1, 5, 8, 9, 7, 4, 6]
 merge_sort(arr)
+print("Sorted array:", arr)
 
-# this algorithm has the time complexity of O(n log n)
-# and the space complexity of O(n)
-# this algorithm uses recursion based on the divide and conquer approach
+# This algorithm has a time complexity of O(n log n)
+# and a space complexity of O(n)
+# It uses recursion based on the divide and conquer approach
