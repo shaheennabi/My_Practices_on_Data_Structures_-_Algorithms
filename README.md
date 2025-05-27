@@ -2,5 +2,5 @@
 
 recursion pending.
  
-thats all here in DSA not going deep in it. thats enough.
+thats all here in DSA not going deep in it. thats enough...
       
